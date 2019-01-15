@@ -2,10 +2,12 @@
 
 // MODULE
 // Ho aggiunto un modulo (contenitore di servizi) importandolo nel tag script dell'html
-var myApp = angular.module('myApp', ['ngMessages']);
+// L'iniettore di angular si preoccupa di iniettare i moduli
+// Il nuovo modulo ngResource mette a disposizione una suite di servizi, tra cui $resource
+var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // CONTROLLERS
-myApp.controller('mainController', function ($scope, $log, $filter) {
+myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
 
     // Gli argomenti sono invarianti per posizione (posso invertirne l'ordine, tanto Angular li parsa per DI)
 
@@ -27,6 +29,9 @@ myApp.controller('mainController', function ($scope, $log, $filter) {
     $scope.formattedname = $filter('uppercase')($scope.name);
     $log.info("scope.name:", $scope.name);
     $log.info("scope.formattedname:", $scope.formattedname);
+
+    // $resource service
+    console.log($resource);
 });
 
 // [Lect. 14] Aggiungere un "service" che non sia built-inato nelle librerie standard di angularJS
