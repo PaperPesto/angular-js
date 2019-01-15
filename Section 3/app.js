@@ -10,6 +10,8 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
 
     // Gli argomenti sono invarianti per posizione (posso invertirne l'ordine, tanto Angular li parsa per DI)
+    // Il nome degli argomenti serve all'iniettore per risolvere la DI, quindi prestare attenzione quando si usa
+    // il minifier (perché cambia il nome delle variabili)
 
     // $scope service
     console.log($scope);
