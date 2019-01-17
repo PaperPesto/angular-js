@@ -1,0 +1,171 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script src="hash-listener.js"></script>
+
+    <title># - hash anchor</title>
+
+    <h1>Fragment identifier</h1>
+
+    <h3>Il tag "a" ha l'attributo href che può indirizzare verso un url esterno oppure verso un elemento -interno- del DOM
+    tramite l'hash #.</h3>
+
+    <h3>Lo script javascript riesce ad intercettare quando nell'url del browser c'è un cancelletto e stampa su console il valore appena dopo il cancelletto
+        tramite window.location.hash
+    </h3>
+
+    <ul>
+        <li>Provare a cliccare sugli ancor qui sotto e vedere sulla console l'output di hash-listener.js</li>
+        <li>Provare a cambiare a mano l'indirizzo del browser e vedere l'output su console</li>
+    </ul>
+
+    <br>
+    <a href="#div1">Goto div1</a>
+
+    <br>
+    <a href="#div2">Goto div2</a>
+
+    <br>
+    <a href="#div3">Goto div3</a>
+
+    <br>
+    <a href="#p1">Goto p1</a>
+
+    <br>
+    <a href="#p-end">Goto p-end</a>
+
+    <br>
+    <a href="#bookmark">Goto Bookmark</a>
+
+    <hr>
+    <h1>Test per single-page application</h1>
+
+    <p>Cliccando sugli anchor, il javascript emette un evento di "cambio hash" intercettabile dal javascript che posso usare per fare -il prototipo- di una single page application.
+        Angular fa proprio così.
+    </p>
+
+    <p></p>
+
+    <br>
+    <a href="#/test/pag1">Goto pag1</a>
+
+    <br>
+    <a href="#/test/pag2">Goto pag2</a>
+
+    <br>
+    <a href="#/test/pag3">Goto pag3</a>
+
+    <hr>
+
+    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet nisl pulvinar, bibendum lectus
+        eu,
+        malesuada
+        tellus. Mauris massa neque, luctus eu velit at, ultrices fringilla odio. In fringilla ex quam, id ornare est
+        rutrum
+        eu. Aliquam hendrerit fermentum congue. Fusce a nulla sit amet eros tempus euismod eu ac sapien. Mauris in
+        pulvinar
+        lectus. Phasellus hendrerit at lectus sed laoreet. Pellentesque aliquet massa eget quam semper mollis. Integer
+        tristique nulla a libero aliquam, at mattis dui convallis. Aenean rutrum purus id mi sollicitudin, sit amet
+        ultrices dolor molestie. Cras dignissim felis nisi, eget facilisis ex commodo nec. Class aptent taciti sociosqu
+        ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Sed eget semper nisi. Nunc metus enim, hendrerit et
+        purus eu, venenatis volutpat odio. Aenean pellentesque sapien consectetur, egestas ligula nec, maximus ex.
+    </p>
+
+    <p>Ut interdum nulla at tortor ultricies faucibus. Proin sagittis libero facilisis quam auctor, ac sollicitudin
+        metus
+        pellentesque. Integer dictum, lectus quis malesuada commodo, lectus enim hendrerit turpis, sit amet accumsan
+        nulla
+        ex semper tellus. Vestibulum dictum non magna eu pellentesque. Curabitur pellentesque sapien sit amet nulla
+        mollis
+        porttitor. Cras non aliquet ipsum. Nullam varius sapien a arcu condimentum iaculis. Mauris dictum, justo non
+        ullamcorper rutrum, ipsum nisi hendrerit tortor, a interdum orci mauris a velit. Etiam fermentum magna a est
+        consequat, ut dapibus nunc ultrices. Donec dictum nulla ut urna sodales, ut tincidunt risus pharetra.
+    </p>
+    <p>
+        Maecenas ac lacus ut metus pulvinar placerat. Nulla faucibus lobortis bibendum. Mauris in vulputate massa, quis
+        dictum nibh. Duis vitae lacinia nisl. Fusce rutrum rhoncus felis id ultrices. Nulla interdum, nulla ac porta
+        commodo, enim dolor interdum nisi, sit amet rhoncus urna leo elementum mi. Maecenas et gravida lectus, ac
+        euismod
+        tellus. Donec sapien tortor, laoreet sed mauris eu, vulputate condimentum metus. Nulla ac lobortis libero. Cras
+        pellentesque lacinia nunc. Mauris gravida arcu vel erat iaculis, at laoreet diam eleifend. Vestibulum
+        condimentum,
+        quam ac lobortis congue, augue nisl scelerisque eros, vitae aliquam ex massa in ligula. Vestibulum nec aliquam
+        lorem, varius mattis lacus.
+    </p>
+
+    <p>
+        Suspendisse ultricies justo vel interdum eleifend. In non nisi blandit, efficitur ligula ornare, rhoncus lorem.
+        Vivamus sit amet velit lorem. Maecenas porta, sapien cursus mattis fringilla, dolor dolor feugiat odio, sed
+        feugiat
+        lorem lorem eu nibh. Phasellus odio quam, convallis mattis elit eget, placerat auctor arcu. Etiam at fermentum
+        massa. Donec non elit eleifend, luctus nunc id, volutpat ligula. Cras aliquam purus est, vel scelerisque arcu
+        facilisis nec.
+    </p>
+    <p>
+        Mauris fermentum aliquam nibh, quis facilisis sapien malesuada nec. In id dictum sapien. Mauris sagittis
+        eleifend
+        euismod. Vestibulum elementum scelerisque nisi a mollis. Cras suscipit consequat dapibus. Sed eget tincidunt
+        risus.
+        Fusce in nibh vel <a id="bookmark"><strong>Bookmark</strong></a>ligula commodo malesuada. Cras eget condimentum
+        velit, non venenatis metus. Fusce luctus
+        fermentum turpis. Quisque fermentum, leo a porta rutrum, neque metus porta risus, at elementum quam ligula at
+        leo.
+        Etiam non felis neque.
+    </p>
+
+    <p>Ut interdum nulla at tortor ultricies faucibus. Proin sagittis libero facilisis quam auctor, ac sollicitudin
+        metus
+        pellentesque. Integer dictum, lectus quis malesuada commodo, lectus enim hendrerit turpis, sit amet accumsan
+        nulla
+        ex semper tellus. Vestibulum dictum non magna eu pellentesque. Curabitur pellentesque sapien sit amet nulla
+        mollis
+        porttitor. Cras non aliquet ipsum. Nullam varius sapien a arcu condimentum iaculis. Mauris dictum, justo non
+        ullamcorper rutrum, ipsum nisi hendrerit tortor, a interdum orci mauris a velit. Etiam fermentum magna a est
+        consequat, ut dapibus nunc ultrices. Donec dictum nulla ut urna sodales, ut tincidunt risus pharetra.
+    </p>
+    <p>
+        Maecenas ac lacus ut metus pulvinar placerat. Nulla faucibus lobortis bibendum. Mauris in vulputate massa, quis
+        dictum nibh. Duis vitae lacinia nisl. Fusce rutrum rhoncus felis id ultrices. Nulla interdum, nulla ac porta
+        commodo, enim dolor interdum nisi, sit amet rhoncus urna leo elementum mi. Maecenas et gravida lectus, ac
+        euismod
+        tellus. Donec sapien tortor, laoreet sed mauris eu, vulputate condimentum metus. Nulla ac lobortis libero. Cras
+        pellentesque lacinia nunc. Mauris gravida arcu vel erat iaculis, at laoreet diam eleifend. Vestibulum
+        condimentum,
+        quam ac lobortis congue, augue nisl scelerisque eros, vitae aliquam ex massa in ligula. Vestibulum nec aliquam
+        lorem, varius mattis lacus.
+    </p>
+
+    <p>
+        Suspendisse ultricies justo vel interdum eleifend. In non nisi blandit, efficitur ligula ornare, rhoncus lorem.
+        Vivamus sit amet velit lorem. Maecenas porta, sapien cursus mattis fringilla, dolor dolor feugiat odio, sed
+        feugiat
+        lorem lorem eu nibh. Phasellus odio quam, convallis mattis elit eget, placerat auctor arcu. Etiam at fermentum
+        massa. Donec non elit eleifend, luctus nunc id, volutpat ligula. Cras aliquam purus est, vel scelerisque arcu
+        facilisis nec.
+    </p>
+    <p id="p-end">
+        Mauris fermentum aliquam nibh, quis facilisis sapien malesuada nec. In id dictum sapien. Mauris sagittis
+        eleifend
+        euismod. Vestibulum elementum scelerisque nisi a mollis. Cras suscipit consequat dapibus. Sed eget tincidunt
+        risus.
+        Fusce in nibh vel ligula commodo malesuada. Cras eget condimentum velit, non venenatis metus. Fusce luctus
+        fermentum turpis. Quisque fermentum, leo a porta rutrum, neque metus porta risus, at elementum quam ligula at
+        leo.
+        Etiam non felis neque.
+    </p>
+
+    <hr>
+
+    <ul>
+        <li id="div1">div 1</li>
+        <li id="div2">div 2</li>
+        <li id="div3">div 3</li>
+    </ul>
+</body>
+
+</html>
