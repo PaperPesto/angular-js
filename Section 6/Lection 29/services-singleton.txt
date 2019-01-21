@@ -1,0 +1,3 @@
+I servizi sono singleton.
+
+Eccezione fatta per $scope, che eredita da $globalScope, che è un singleton per tutta l'app.
