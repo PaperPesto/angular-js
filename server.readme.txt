@@ -1,0 +1,7 @@
+Per testare il front-end in angularjs, lanciare da console (Powershell) una delle due opzioni
+
+1 - $ http-server
+    lancia un istanza di un server in nodejs che serve pagine statiche. Permette di testare tutte le pagine in anuglar nelle cartelle del progetto
+    
+2 - $ node server.js
+    lancia un server in nodejs con delle api di test. Mocka anche un database (in realtà è un array di rules statico)
