@@ -1,0 +1,5 @@
+Differenza tra pre-link e post-link
+-----------------------------------
+Una directive viene buildata, poi viene eseguito il pre-build della directive.
+Il pre-build va a cercare tutte le directive innestate in quella originale e, per ognuna, lancia la build e nuovamente il pre-build.
+Quando tutti i pre-build delle directive innestate terminano, viene lanciato il post-build sulla directory chiamante.
