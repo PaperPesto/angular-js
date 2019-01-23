@@ -1,6 +1,9 @@
-var express = require('express');
-var bodyParser = require('body-parser')
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser')
+const app = express();
+const fetch = require('node-fetch');
+
+const url = "https://samples.openweathermap.org/data/2.5/forecast";
 
 app.use(bodyParser.json());
 
@@ -49,6 +52,31 @@ app.post('/insertRule', function (req, res) {
   staticRules.push(req.body);
 
   res.status(200).send(staticRules);
+});
+
+
+// Il server fa una chiamata all'api del servizio web di meteorologia
+// si aspetta un body così:
+// {
+// 	"q": "Florence",
+// 	"appid": "aaaaa"
+// }
+app.get('/weather/getForecast', async function (req, res) {
+
+  console.log('GET /mock/getWeather');
+  console.log(req.body);
+
+  var q = req.body.q;
+  var appid = req.body.appid;
+
+  console.log(q, appid);
+
+  var queryString = `?q=${q}&appid=${appid}`;
+
+  const response = await fetch(url + queryString);
+  const json = await response.json();
+
+  res.status(200).send(json);
 });
 
 
