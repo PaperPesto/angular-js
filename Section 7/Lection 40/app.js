@@ -70,13 +70,13 @@ myApp.directive("searchResult", function () {
 
             console.log('Linking...');
 
-            console.log(scope);
+            console.log('model', scope);
 
             if (scope.personObject.name == 'Jane Doe') {
                 elements.removeAttr('class');
             }
             
-            console.log(elements);
+            console.log('viewmodel', elements.html());
         }
     }
 });

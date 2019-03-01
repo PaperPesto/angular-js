@@ -66,26 +66,38 @@ myApp.directive("searchResult", function () {
             personObject: "=",
             formattedAddressFunction: "&"
         },
-        // initialize
-        compile: function (elem, attrs) {
+        // aka "initialize"
+        compile: function (elem, attrs /*NB non c'è scope*/) {
+            // NB. Non si usa quasi mai compile! Si preferisc usare "link"
+            // compile serve per intercettare il dom che verrà utilizzato dalla directive. È l'html originale, che poi viene passato ai link che generano l'html finale da visualizzare.
+
             console.log('Compiling...');
-            //elem.removeAttr('class');   // prende al volo l'html e lo modifica prima di renderizzarlo
+            // elem è l'html della directive iniettato dalla proprietà templateUrl, in questo caso un <a>...</a>
+            // Compiling viene lanciato una sola volta, mentre i Pre(Post)-linking viene lanciato 3 volte (una per ng-repeat)
+            //elem.removeAttr('class');   // prende al volo l'html e lo modifica prima di renderizzarlo e bindarlo allo scope (infatti non ho scope nella funzione di compile)
             console.log(elem.html());
 
-            // hooks
             return {
-                pre: function (scope, elements, attrs) {
+                // pre-link
+                pre: function (scope, element, attrs) {
+                    // Il linking viene lanciato sempre alla creazione della directive (NB c'è scope nella funzione)
                     console.log('Pre-linking...');
-                    console.log(elements);
+                    console.log(element);
                 },
-                // onbind
-                post: function (scope, elements, attrs) {
+                // post-link - aka "onBind" (cioé quando viene bindato il model all'html, cioé il viewmodel)
+                post: function (scope, element, attrs) {
+                    // Sono dentro il personalissimo scope della directive
+                    // scope è il model intra-directiv
+                    // element è l'html (view) della directive
+                    // attrs sono gli attributi della directive, ad esempio ngRepeat, personObject, class, formattedAddressFunction
                     console.log('Post-linking...');
-                    console.log(scope);
+                    console.log('scope - model', scope);
+                    console.log('element - view', element.html());
+                    console.log('attrs - attributi', attrs);
                     if (scope.personObject.name == 'Jane Doe') {
-                        elements.removeAttr('class');
+                        element.removeAttr('class');
                     }
-                    console.log(elements);
+                    console.log(element);
                 }
             }
         }

@@ -44,7 +44,7 @@ myApp.directive("searchResult", function () {
         replace: true,
         // Model (isolated scope)
         scope: {
-            personName: "@", // bindata a person-name in ingresso sulla directive come attributo
+            personName: "@", // bindata a person-name in ingresso sulla directive come attributo. @ significa che inietterò del testo
             personAddress: "@"
         }
     }
