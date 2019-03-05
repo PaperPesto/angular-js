@@ -2,7 +2,7 @@ angular.module('ui.bootstrap.demo', ['ngAnimate', 'ui.bootstrap']);
 angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
 
     console.log('ModalDemoCtrl start');
-    $scope.items = ['item1', 'item2', 'item3'];
+    $scope.items = ['item1', 'item2', 'item3', 'item4'];
 
     $scope.animationsEnabled = true;
 
