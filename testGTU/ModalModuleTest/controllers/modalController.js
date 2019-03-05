@@ -1,6 +1,11 @@
-angular.module('modal.module.test').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('modal.module.test').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, size) {
 
     console.log('ModalInstanceCtrl start');
+    console.log('items:', items);
+    console.log('size:', size);
+
+    $scope.title = 'Modal title from Pippo';
+    $scope.size = size;
 
     $scope.items = items;
     $scope.selected = {
@@ -8,6 +13,7 @@ angular.module('modal.module.test').controller('ModalInstanceCtrl', function ($s
     };
 
     $scope.ok = function () {
+        // Qui ripasso la roba al controller chiamante
         $uibModalInstance.close($scope.selected.item);
     };
 

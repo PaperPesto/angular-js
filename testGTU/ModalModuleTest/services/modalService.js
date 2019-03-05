@@ -5,26 +5,25 @@ app.service('modalService', ['$uibModal', '$log', function ($uibModal, $log) {
         return 'modalService';
     }
 
-    this.openModal = function (size) {
+    this.openModal = function (size, template_file) {
 
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: 'templates/ModalContent.html',
+            templateUrl: 'templates/' + template_file,
             controller: 'ModalInstanceCtrl',
             size: size,
             resolve: {
                 items: function () {
                     return ['item1', 'item2', 'item3'];
+                },
+                size: function () {
+                    return size;
                 }
             }
         });
 
-        modalInstance.result.then(function (selectedItem) {
-            this.payload = selectedItem;
-        }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
-        });
+        return modalInstance.result;
     };
 }]);
 
-// myApp.service('unicornLauncher', ["apiToken", UnicornLauncher]);
+// myApp.service('unicornLauncher', ["apiToken", UnicornLauncher]);standard-modal.html'

@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h3 class="modal-title" id="modal-title-{{name}}">Title: {{title}}</h3>
+    <p>Size: {{size}}</p>
+</div>
+
+<div class="modal-body" id="modal-body-{{name}}">
+    <div ng-show="data.isLoading">
+        <div id="circle">
+            <div class="loader-1">
+                <div class="loader-2">
+                    <div class="loader-3">
+                        <div class="loader-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="content"></div>
+
+</div>
+<div class="modal-footer" id="modal-footer-{{name}}">
+    <button class="btn btn-primary" type="button" ng-click="ok()">ok</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">cancel</button>
+</div>
