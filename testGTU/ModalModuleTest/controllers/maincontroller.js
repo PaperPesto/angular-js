@@ -1,8 +1,8 @@
-app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
+app.controller('ModalDemoCtrl', ['$scope', '$uibModal', '$log', 'modalService', function ($scope, $uibModal, $log, modalService) {
 
     console.log('ModalDemoCtrl start');
 
-    // modalService.sayHello();
+    console.log('name from service', modalService.getName());
 
     $scope.items = ['item1', 'item2', 'item3'];
 
@@ -34,7 +34,7 @@ app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
     };
 
     console.log('ModalDemoCtrl stop');
-});
+}]);
 
 
 // Please note that $uibModalInstance represents a modal window (instance) dependency.

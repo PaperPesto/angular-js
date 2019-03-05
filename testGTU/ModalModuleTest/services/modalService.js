@@ -1,6 +1,8 @@
-app.service('modalService', function ($scope) {
-    $scope.sayHello = function () {
-        console.log('hello');
+app.service('modalService', function () {
+    console.log('hello');
+
+    this.getName = function(){
+        return 'modalService';
     }
 });
 
