@@ -1,5 +1,5 @@
-angular.module('ui.bootstrap.demo', ['ngAnimate', 'ui.bootstrap']);
-angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
+angular.module('modal.module.test', ['ngAnimate', 'ui.bootstrap']);
+angular.module('modal.module.test').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
 
     console.log('ModalDemoCtrl start');
     $scope.items = ['item1', 'item2', 'item3'];
@@ -38,7 +38,7 @@ angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-angular.module('ui.bootstrap.demo').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('modal.module.test').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
     console.log('ModalInstanceCtrl start');
 
