@@ -9,13 +9,14 @@
     <script src="controllers/maincontroller.js"></script>
     <script src="controllers/modalController.js"></script>
     <script src="services/modalService.js"></script>
+    <script src="directives/myModal.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
     <div ng-controller="ModalDemoCtrl">
-        <button type="button" class="btn btn-default" ng-click="open(null, 'standard-modal.html')">Open me!</button>
+        <button type="button" class="btn btn-default" ng-click="open(null, 'standard-modal.html', 'Ciao')">Open me!</button>
         <button type="button" class="btn btn-default" ng-click="open('lg', 'standard-modal.html')">Large modal</button>
         <button type="button" class="btn btn-default" ng-click="open('sm', 'standard-modal.html')">Small modal</button>
         <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation({{ animationsEnabled }})</button>

@@ -5,11 +5,17 @@ app.service('modalService', ['$uibModal', '$log', function ($uibModal, $log) {
         return 'modalService';
     }
 
-    this.openModal = function (size, template_file) {
+    this.openModal = function (size, template_file, content) {
+
+        console.log('size', size);
+        console.log('template_file', template_file);
+        console.log('content XXXX', content);
 
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: 'templates/' + template_file,
+            // templateUrl: 'templates/' + template_file,
+            // template: `<my-modal content=${content}</my-modal>`,
+            template: '<my-modal content="' + content + '"></my-modal>',
             controller: 'ModalInstanceCtrl',
             size: size,
             resolve: {
