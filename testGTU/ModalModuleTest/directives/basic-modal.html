@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h3 class="modal-title" id="modal-title-{{name}}">Title (directive): {{title}}</h3>
+    <p>Size: {{size}}</p>
+</div>
+
+<div class="modal-body" id="modal-body-{{name}}">
+
+    <div ng-include="content"></div>
+
+</div>
+<div class="modal-footer" id="modal-footer-{{name}}">
+    <button class="btn btn-primary" type="button" ng-click="ok()">ok</button>
