@@ -80,6 +80,16 @@ app.get('/weather/getForecast', async function (req, res) {
 });
 
 
+// endpoint di test per $q.all
+app.get('/dev/getRandomName', function (req, res) {
+
+  var random = require('random-name');
+  setTimeout(function() {
+    res.status(200).send(random());
+  }, 750);
+  
+});
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
