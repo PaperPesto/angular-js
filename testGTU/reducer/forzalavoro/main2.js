@@ -1,4 +1,4 @@
-let data = require('./data.json');
+let data = require('./data_dec_2018.json');
 
 // ------- PRENDO I GESTORI ---------
 let dictionary = data
@@ -19,7 +19,7 @@ Object.keys(dictionary).forEach(idGestore => {
         .filter(element => element.addetto.contratto.gestore.id.id == idGestore)
         .reduce((acc, curr) => acc + curr.conteggio.lista.reduce((iacc, icurr) => iacc + icurr.quantita, 0), 0);
     
-        console.log(`${idGestore} ${dictionary[idGestore].nome}: ${resultTotalReduce}`);
+        console.log(`${idGestore} ${dictionary[idGestore].nome}: ${resultTotalReduce / 60}`);
 });
 
 // ------------------------------------------------
