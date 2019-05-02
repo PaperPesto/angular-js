@@ -1,17 +1,19 @@
 let listaAree = require('./listaAree.json');
 
+// solo per visualizzazione, per vedere come fare una arrow function che restituisce un arrow function
+customReducerTipiTurnoCallback_programmato = (customIndex) => (acc, curr) => {
+    if (curr.tipiTurni.length != 0) {
+        return acc + (curr.tipiTurni[customIndex].quantita || { programmato: 0 }).programmato;
+    }
+    else return 0;
+};
+
 listaAree.forEach(area => {
 
     console.log('------ ', area.nome);
 
     // Tipo 1
-    let programmato = area.stazioni.reduce((acc, curr) => {
-        // console.log('current', curr);
-        if (curr.tipiTurni.length != 0) {
-            return acc + (curr.tipiTurni[0].quantita || { programmato: 0 }).programmato;
-        }
-        else return 0;
-    }, 0);
+    let programmato = area.stazioni.reduce(customReducer, 0);
 
     let assegnato = area.stazioni.reduce((acc, curr) => {
         if (curr.tipiTurni.length != 0) {
