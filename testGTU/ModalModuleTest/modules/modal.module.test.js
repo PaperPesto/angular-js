@@ -1,0 +1,1 @@
+const app = angular.module('modal.module.test', ['ngAnimate', 'ui.bootstrap']);
