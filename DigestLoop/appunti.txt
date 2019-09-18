@@ -1,0 +1,19 @@
+--- WATCHERS ---
+
+Quando viene creata una variabile tra {{}} angular sotto il cofano fa il doppio binding inserendo nello scope un "watchers", che aggiorna la view quando il model cambia.
+
+Per settarlo a mano per la variabile {{aModel}} basta fare
+
+$scope.$watch('aModel', function(newValue, oldValue) {
+    // update the DOM with newValue
+})
+
+Crea un collegamento variabile <-> listenerFunction
+
+Il primo argomento al $watch è il nome della variabile doppio-bindata, mentre il secondo argomento è una funzione chiamata "listener function", che cambia il dom quando "sente" che la variabile è cambiata.
+
+Con che criterio viene chiamata la listener function? Come fa angular a capire che la variabile è cambiata e fare l'update del dom?
+Qui entra in gioco il $digest.
+
+--- DIGEST CYCLE ---
+È all'interno del $digest che vengono sparate le "listener functions"
